@@ -54,7 +54,7 @@ function exibir_arquivos_audio_por_taxonomia($exibir_todas_taxonomias = true, $c
 
                 // Verifica se o usuário não tem acesso ao plano
                 if (!current_user_has_access()) {
-                    echo '<div class="audio" style="cursor: pointer;" onclick="openPopup(\'' . esc_js($titulo_audio) . '\')">';
+                    echo '<div class="audio" id="repro" style="cursor: pointer;" onclick="openPopup(\'' . esc_js($titulo_audio) . '\')">';
                     echo '<div class="audio-title" style="display: inline-flex; align-items: center; margin: 0;">';
                     echo esc_html($titulo_audio);
                     echo '</div>';
@@ -135,7 +135,7 @@ function exibir_arquivos_noveri($exibir_todas_taxonomias = true, $custom_taxonom
                 $audio_url = wp_get_attachment_url($audio_id);
 
                 if (!empty($audio_url)) {
-                    echo '<div class="audio" onclick="playAudio(\'' . esc_js($titulo_audio) . '\', \'' . esc_url($audio_url) . '\', this)" style="cursor: pointer;">'; 
+                    echo '<div class="audio" id="repro" onclick="playAudio(\'' . esc_js($titulo_audio) . '\', \'' . esc_url($audio_url) . '\', this)" style="cursor: pointer;">'; 
                     echo '<div class="audio-title" style="display: inline-flex; align-items: center; margin: 0;">';
                     echo '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="play-icon" style="display:none; width: 12px; height: 12px; margin-right: 5px;">';
                     echo '<rect class="bar" x="2" y="15" width="3" height="8" fill="currentColor"/>';
